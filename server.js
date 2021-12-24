@@ -5,10 +5,8 @@ const path = require('path');
 http.createServer((request, response) => {
     console.log('request ', request.url);
 
-    var filePath = '.' + request.url;
-    if (filePath == './') {
-        filePath = './index.html';
-    }
+    const filePath = '.' + request.url;
+    if (filePath === './') filePath = './index.html';
 
     var extname = String(path.extname(filePath)).toLowerCase();
     var mimeTypes = {
